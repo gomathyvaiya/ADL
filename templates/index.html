@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Face Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="video-box">
+      <img src="{{ url_for('video_feed') }}" alt="Live Video Feed">
+    </div>
+
+    <div class="links">
+      <a href="{{ url_for('register') }}" class="btn">Register New Face</a>
+      <a href="{{ url_for('upload_video') }}" class="btn btn-secondary">Upload Video</a>
+    </div>
+  </div>
+</body>
+</html>

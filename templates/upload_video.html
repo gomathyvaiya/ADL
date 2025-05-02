@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Video | Face Verification</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Upload Video</h1>
+    <p class="subtitle">Submit a video for face recognition</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="video" accept="video/*" required>
+      <button type="submit" class="btn">Upload</button>
+    </form>
+
+    <a href="{{ url_for('index') }}" class="back-link">← Back to Home</a>
+  </div>
+</body>
+</html>
