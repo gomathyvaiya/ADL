@@ -1,2 +1,0 @@
-# ADL
-Advanced Deep Learning
